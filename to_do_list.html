@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+
+    <style>
+      .list_show button {
+        background-color: #d70000;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin-left: 30px;
+      }
+      .list_show button:hover {
+        background-color: #d70000;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; 
+        min-height: 100vh;
+        margin: 0;
+        padding-top: 50px; 
+        
+        background-color: #f4f5dc; 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+      }
+
+      input-group {
+          display: flex;       
+          flex-direction: row; 
+          gap: 10px;           
+          align-items: center; 
+          margin-bottom: 20px; 
+      }
+
+      
+      .to_do_bar, .to_do_bar_2 {
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+
+      .add_show_button {
+        background-color: #28a745; 
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+      }
+
+      .add_show_button:hover {
+        background-color: #218838;
+      }
+
+
+      .set_history {
+          background-color: white;
+          color: #007bff; 
+          padding: 8px 16px;
+          border: 1px solid #007bff;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-bottom: 25px; 
+          font-size: 14px;
+          transition: all 0.3s ease;
+      }
+
+      .set_history:hover {
+          background-color: #007bff;
+          color: white;
+      }
+      .heading {
+          font-size: 2.8rem;
+          font-weight: 800;
+          color: #2d3436; 
+
+          margin: 20px 0 40px 0;
+          text-align: center;
+
+          letter-spacing: -1px; 
+          text-transform: capitalize;
+
+          position: relative;
+          display: inline-block;
+      }
+
+      .heading::after{
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 20%;
+          width: 60%;
+          height: 4px;
+          background-color: #F9D71C; /* Ripe Banana Yellow */
+          border-radius: 10px;
+      }
+
+    </style>
+
+    <p class="heading">To Do List App</p>
+
+    <button class="set_history" onclick="js_set_history()">Show recent history</button>
+
+
+
+    <div class="input-group">
+
+    <input class="to_do_bar" placeholder="todo name" 
+    onkeydown="if(event.key === 'Enter') {add_show()}">
+
+    <input class="to_do_bar_2" type="time" >
+    
+    <button class="add_show_button" onclick="add_show();">Add and Save</button>
+
+    <div class="list_show"></div>
+
+    </div>
+    
+    <script src="Javascript/to_do_list.js"></script>
+  </body>
+</html>
